@@ -1,0 +1,75 @@
+import math
+def add(n1,n2):
+  return n1 + n2
+
+def subtract(n1,n2):
+  return n1 - n2
+
+def multiply(n1,n2):
+  return n1 * n2
+
+def divide(n1,n2):
+  return n1/n2
+
+def exponent(n1,n2):
+  return n1 ** n2
+
+def nth_root(n1,n2):
+  return n1**(1/n2)
+
+operations = {
+  "+":add,
+  "-":subtract,
+  "*":multiply,
+  "/":divide,
+  "^":exponent,
+  "nth_root":nth_root
+}
+
+def calculator():
+  print( """
+        _____________________
+       |  _________________  |
+       | | Sergio_calc   0. | |  .----------------.  .----------------.  .----------------.  .----------------.
+       | |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+       |  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+       | | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+       | |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+       | | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+       | |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+       | | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+       | |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+       | | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+       | |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------'
+       |_____________________|
+       """)
+  num1 = float(input("Enter the first number: "))
+ 
+ 
+  for symbols in operations:
+    print(symbols)
+  should_continue = True
+  while should_continue:
+    operation_symbol = input("Choose an operation\n")
+    num2 = float(input("Enter the next number: "))
+   
+    calculation = operations[operation_symbol]
+    answer = round(calculation(num1,num2),3)
+   
+    print(f"{num1} {operation_symbol} {num2} = {answer}")
+     
+    decision = input(f"Type 'yes' to continue calculating with {answer} type 'no' to start again or type 'exit' to exit\n")
+    if decision == "yes":
+      num1 = answer
+    elif decision == "exit":
+      break
+    else:
+      should_continue = False
+      calculator()
+   
+   
+   
+calculator()
+
+   
+
