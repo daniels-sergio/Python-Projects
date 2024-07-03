@@ -1,0 +1,114 @@
+print('''       {
+      {   }
+       }_{ __{
+    .-{   }   }-.
+   (   }     {   )
+   |`-.._____..-'|
+   |             ;--.
+   |            (__  )
+   |             | )  )
+   |             |/  /
+   |             /  /    
+   |            (  /
+   |             y'
+    `-.._____..-'
+''')
+MENU = {
+    "espresso": {
+        "ingredients": {
+            "water": 50,
+            "coffee": 18,
+        },
+        "cost": 35,
+    },
+    "latte": {
+        "ingredients": {
+            "water": 200,
+            "milk": 150,
+            "coffee": 24,
+        },
+        "cost": 44,
+    },
+    "cappuccino": {
+        "ingredients": {
+            "water": 250,
+            "milk": 100,
+            "coffee": 24,
+        },
+        "cost": 63,
+    },
+    "report": {
+        "water": 1000,
+        "milk": 400,
+        "coffee": 90
+    }
+}
+
+machine_stat =MENU["report"]
+machine_water = machine_stat["water"]
+machine_milk = machine_stat["milk"]
+machine_coffee = machine_stat["coffee"]
+payment = 0
+profit = 0
+options = ["espresso","latte","cappuccino","report"]
+def user_payment(R20_notes,R10_notes,R5_coins):
+    global payment
+    global profit
+    payment += R20_notes * 20 + R10_notes * 10 + R5_coins * 5
+
+machine_operation = True
+print("(Psst,type 'report' when asked to choose a drink to check the machines ingredient levels)")
+def machine_ui():
+    global machine_water
+    global machine_milk
+    global machine_coffee
+    global payment
+    while machine_operation:
+        print("What drink would you like today?")
+        custo_choice = input("espresso/latte/cappuccino?")
+        if custo_choice == "report":
+            print(f"The machines water: {machine_water}mls")
+            print(f"The machines milk: {machine_milk}mls")
+            print(f"The machines coffee: {machine_coffee}grams")
+        elif custo_choice not in options:
+            print("invalid selection,please try again")
+        else:
+            user_choice = MENU[custo_choice]
+            item_attribute = user_choice["ingredients"]
+            item_cost = user_choice["cost"]
+            drink_water = item_attribute["water"]
+            print(f"That will be R{item_cost} :)")
+            drink_coffee = item_attribute["coffee"]
+
+            R20_notes = int(input("Enter amount R20 notes: "))
+            R10_notes = int(input("Enter amount of R10 notes: "))
+            R5_coins = int(input("Enter amount of R5 coins: "))
+            user_payment(R20_notes, R10_notes, R5_coins)
+
+            print(f"payment made: {payment}")
+            print(f"item cost: {item_cost}")
+            if payment>=item_cost:
+                print(f"Your change is R{payment-item_cost}")
+            def make_coffee(payment, item_cost):
+                global machine_water
+                global machine_coffee
+                global machine_milk
+                if payment >= item_cost:
+                    machine_water -= drink_water
+                    machine_coffee -= drink_coffee
+                    if "milk" in item_attribute:
+                        drink_milk = item_attribute["milk"]
+                        if machine_milk < drink_milk:
+                            print("Sorry machine doesnt have enough milk")
+                        machine_milk -= drink_milk
+                    print(f"Here is your {custo_choice}<3")
+                else:
+                    print(f"You were R{item_cost - payment} short,you have been refunded")
+            if machine_water < drink_water:
+                print("Sorry machine doesnt have enough water :(")
+            elif machine_coffee < drink_coffee:
+                print("Sorry machine doesnt have enough coffee")
+            else:
+                make_coffee(payment, item_cost)
+            payment = 0
+machine_ui()
