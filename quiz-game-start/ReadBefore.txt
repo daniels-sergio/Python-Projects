@@ -1,0 +1,8 @@
+Greetings
+The data.py file is just a file of data for the actual quiz
+the quiz_brain.py is the "logic" for the how the quiz functions
+**The one to run is the main.py**
+
+This is my first project using objected oriented programming
+
+Thank you and i hope you find it entertaining :)
