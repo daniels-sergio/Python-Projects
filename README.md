@@ -2,7 +2,7 @@
 - 👀 I’m interested in programming as a whole but mainly python and java
 - 🎓 I’m currently studying a BSc in IT
 -  I’m looking to collaborate on any project,just hmu
-- 📫 @pettiepiggy@gmail.com
+- 📫 sergioashdaniels10@gmail.com
 - 🤟🏼🤟🏼🤟🏼
 
 <!---
