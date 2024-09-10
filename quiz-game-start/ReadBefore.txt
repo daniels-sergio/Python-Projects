@@ -2,7 +2,7 @@ Greetings
 The data.py file is just a file of data for the actual quiz
 the quiz_brain.py is the "logic" for the how the quiz functions
 **The one to run is the main.py**
-
+** To download this folder copy the link and paste into https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fdaniels-sergio%2FMy-projects%2Ftree%2F3b93800a801d4515770d7326778d42a6ab6aadc4%2Fquiz-game-start **
 This is my first project using objected oriented programming
 
 Thank you and i hope you find it entertaining :)
