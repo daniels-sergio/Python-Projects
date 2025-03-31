@@ -1,9 +1,9 @@
 -  Hi, I’m Sergio
-- 👀 I’m interested in programming as a whole but mainly python and java
-- 🎓 I’m currently studying a BSc in IT
--  I’m looking to collaborate on any project,just hmu
+- 👀 I’m interested in programming as a whole
+- 🎓 Currently a 2nd year Bsc IT student
+-  I’m open to collaborate on any project,please feel free to to contact me
 - 📫 sergioashdaniels10@gmail.com
-- 🤟🏼🤟🏼🤟🏼
+  
 
 <!---
 daniels-sergio/daniels-sergio is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
